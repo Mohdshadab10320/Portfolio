@@ -21,6 +21,7 @@ html{scroll-behavior:smooth;}
 body{background:#0b0b0b;color:#fff;overflow-x:hidden;}
 canvas{position:fixed;top:0;left:0;z-index:-1;}
 
+/* NAVIGATION */
 nav{
 position:fixed;top:0;width:100%;
 background:rgba(0,0,0,0.7);
@@ -30,6 +31,7 @@ padding:15px;text-align:center;z-index:1000;
 nav a{color:#00ffd5;margin:0 15px;text-decoration:none;font-weight:600;}
 .settings-icon{float:right;margin-right:20px;cursor:pointer;color:#00ffd5;}
 
+/* HERO */
 header{
 height:100vh;
 display:flex;
@@ -37,7 +39,6 @@ align-items:center;
 justify-content:center;
 padding-top:100px;
 }
-
 .hero{
 display:flex;
 align-items:center;
@@ -48,7 +49,6 @@ width:100%;
 padding-left:60px;
 position:relative;
 }
-
 .hero-text{max-width:520px;}
 .hero-text h1{font-size:60px;text-shadow:0 0 25px #00ffd5;}
 .hero-text p{margin-top:15px;font-size:20px;color:#00ffd5;line-height:1.7;}
@@ -84,7 +84,6 @@ right: 60px;
 top: 50%;
 transform: translateY(-50%);
 }
-
 .hero-image img {
 width: 100%;
 height: 100%;
@@ -92,9 +91,11 @@ border-radius: 50%;
 object-fit: cover;
 }
 
+/* SECTIONS */
 section{padding:90px 10%;}
 h2{font-size:40px;color:#00ffd5;margin-bottom:25px;}
 
+/* CARDS */
 .card{
 background:rgba(255,255,255,0.08);
 border-radius:20px;
@@ -108,27 +109,116 @@ transform:rotateY(15deg) rotateX(10deg) scale(1.05);
 box-shadow:0 30px 60px rgba(0,255,213,0.3);
 }
 
+/* BUTTONS */
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:14px 35px;
-border-radius:40px;
+margin-top:15px;
+padding:12px 25px;
+border-radius:30px;
 background:#00ffd5;
 color:#000;
 font-weight:600;
 text-decoration:none;
 transition:0.3s;
+cursor:pointer;
 }
 .btn:hover{
 background:#fff;
 transform:scale(1.1);
 }
 
+/* COUNTER STATS */
+.stats-wrapper{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+margin-top:25px;
+gap:20px;
+}
+.stat-box{
+background:rgba(255,255,255,0.08);
+padding:25px 30px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(15px);
+box-shadow:0 0 25px rgba(0,255,213,0.25);
+transition:0.4s;
+}
+.stat-box:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 25px 50px rgba(0,255,213,0.4);
+}
+.stat-box h3{
+font-size:32px;
+color:#00ffd5;
+margin-bottom:10px;
+}
+.stat-box p{
+font-size:16px;
+color:#fff;
+font-weight:600;
+}
+
+/* PRICING CARDS */
+.pricing-wrapper{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:40px;
+}
+.pricing-card{
+width:230px;
+padding:30px 20px;
+background:rgba(255,255,255,0.08);
+border-radius:18px;
+text-align:center;
+backdrop-filter:blur(15px);
+box-shadow:0 0 25px rgba(0,255,213,0.25);
+transition:0.4s;
+}
+.pricing-card:hover{
+transform:translateY(-12px) scale(1.08);
+box-shadow:0 25px 50px rgba(0,255,213,0.4);
+}
+
+/* BOOK CALL MODAL */
+.modal{
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+align-items:center;justify-content:center;
+z-index:2000;
+}
+.modal-content{
+background:#111;
+padding:30px 40px;
+border-radius:20px;
+max-width:400px;
+width:90%;
+text-align:center;
+}
+.modal-content h3{color:#00ffd5;margin-bottom:20px;}
+.modal-content a{
+display:block;
+margin:10px 0;
+padding:12px;
+border-radius:25px;
+background:#00ffd5;
+color:#000;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+.modal-content a:hover{background:#fff;color:#000;}
+
 /* SKILLS */
 .skills-wrapper{
 display:flex;
 gap:40px;
 flex-wrap:wrap;
+margin-top:30px;
 }
 .skill-box{
 flex:1;
@@ -158,15 +248,156 @@ color:#000;
 border-radius:40px;
 font-weight:600;
 }
+/* CONTACT SECTION */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: column; /* mobile-friendly */
+  align-items: center;
+}
+
+.contact-box {
+  width: 230px;
+  padding: 30px 20px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px rgba(0,255,213,0.25);
+  transition: 0.4s;
+}
+
+.contact-box:hover {
+  transform: translateY(-12px) scale(1.08);
+  box-shadow: 0 25px 50px rgba(0,255,213,0.4);
+}
+
+.contact-box i {
+  font-size: 40px;
+  color: #00ffd5;
+  margin-bottom: 15px;
+}
+
+.contact-box p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.contact-box small {
+  display: block;
+  margin-top: 8px;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Contact Form Box */
+
+/* CONTACT SECTION */
+.contact-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+  flex-direction:column;
+  align-items:center;
+}
+
+.contact-box{
+  width:100%;
+  max-width:600px;
+  padding:30px 25px;
+  background:rgba(255,255,255,0.08);
+  border-radius:18px;
+  text-align:center;
+  backdrop-filter:blur(15px);
+  box-shadow:0 0 25px rgba(0,255,213,0.25);
+  transition:0.4s;
+}
+
+.contact-box:hover{
+  transform:translateY(-12px) scale(1.05);
+  box-shadow:0 25px 50px rgba(0,255,213,0.4);
+}
+
+.contact-form-box h3{
+  color:#00ffd5;
+  margin-bottom:20px;
+}
+
+.contact-form-box form input,
+.contact-form-box form select,
+.contact-form-box form textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-family:'Poppins',sans-serif;
+}
+
+.contact-form-box form textarea{
+  resize:none;
+  height:100px;
+}
+
+.contact-form-box form button{
+  width:100%;
+}
+/* DM BUTTONS */
+.dm-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.dm-buttons .btn{
+  flex:1;
+  min-width:160px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+/* Platform colors (subtle) */
+.whatsapp-btn{ background:#25D366; }
+.insta-btn{
+  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+  color:#fff;
+}
+.telegram-btn{ background:#229ED9; color:#fff; }
+
+.whatsapp-btn:hover,
+.insta-btn:hover,
+.telegram-btn:hover{
+  background:#fff;
+  color:#000;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .dm-buttons{
+    flex-direction:column;
+  }
+  .dm-buttons .btn{
+    width:100%;
+  }
+}
 
 /* SERVICES, PROJECTS & EDUCATION SMALL FRAMES */
-.services-wrapper{
+.services-wrapper, .contact-wrapper{
 display:flex;
 gap:30px;
 flex-wrap:wrap;
 justify-content:center;
 }
-.service-box{
+.service-box, .contact-box{
 width:230px;
 padding:30px 20px;
 background:rgba(255,255,255,0.08);
@@ -176,51 +407,37 @@ backdrop-filter:blur(15px);
 box-shadow:0 0 25px rgba(0,255,213,0.25);
 transition:0.4s;
 }
-.service-box i{
+.service-box:hover, .contact-box:hover{
+transform:translateY(-12px) scale(1.08);
+box-shadow:0 25px 50px rgba(0,255,213,0.4);
+}
+.service-box i, .contact-box i{
 font-size:40px;
 color:#00ffd5;
 margin-bottom:15px;
 }
-.service-box p{
-font-size:18px;
-font-weight:600;
-}
-.service-box small{
-display:block;
-margin-top:8px;
-color:#fff;
-font-size:14px;
-line-height:1.4;
-}
-.service-box:hover{
-transform:translateY(-12px) scale(1.08);
-box-shadow:0 25px 50px rgba(0,255,213,0.4);
-}
+.service-box p, .contact-box p{font-size:18px;font-weight:600;color:#fff;}
+.service-box small, .contact-box small{display:block;margin-top:8px;color:#aaa;font-size:14px;line-height:1.4;}
 
-footer{text-align:center;padding:40px;background:#000;color:#aaa;}
-
-/* ANDROID / MOBILE CONVERSION */
+/* MOBILE */
 @media (max-width:768px){
-
 canvas{display:none;}
-
 nav a{font-size:13px;margin:0 6px;}
 .settings-icon{display:none;}
-
 header{height:auto;padding-top:120px;}
 .hero{flex-direction:column;padding-left:0;gap:35px;text-align:center;}
 .hero-text h1{font-size:38px;}
 .hero-text p{font-size:16px;line-height:1.6;}
 .hero-image{position:relative;right:0;top:0;transform:none;width:240px;height:240px;margin:auto;}
-.social a{font-size:26px;margin:0 8px;}
 section{padding:65px 6%;}
 h2{font-size:32px;text-align:center;}
-.skills-wrapper,.services-wrapper{flex-direction:column;align-items:center;}
-.skill-box,.service-box{width:100%;max-width:340px;}
+.skills-wrapper,.services-wrapper,.pricing-wrapper,.contact-wrapper{flex-direction:column;align-items:center;}
+.skill-box,.service-box,.pricing-card,.contact-box{width:100%;max-width:340px;}
+.stats-wrapper{flex-direction:column;align-items:center;}
+.stat-box{width:100%;max-width:220px;}
 }
 </style>
 </head>
-
 <body>
 
 <canvas id="bg"></canvas>
@@ -232,6 +449,7 @@ h2{font-size:32px;text-align:center;}
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#services">Services</a>
+  <a href="#pricing">Pricing</a>
   <a href="#education">Education</a>
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
@@ -247,7 +465,7 @@ h2{font-size:32px;text-align:center;}
 <div class="hero-text">
 <h1>Mohd Shadab</h1>
 <p>
-I am a passionate <b>Web Developer & Python Developer</b><br>
+I am a passionate <b>Web Developer & Python Developer & Data science</b><br>
 focused on modern websites, Python apps,<br>
 and creative 3D web experiences.
 </p>
@@ -275,24 +493,25 @@ Hello 👋  I am <b>Mohd Shadab</b>, a passionate <b>Web & Python Developer</b> 
 I enjoy turning ideas into real projects and creating smooth, user-friendly digital experiences while continuously learning new technologies.
 </p>
 <a href="files/Mohd_Shahdab_CV.pdf" download class="btn">Download CV</a>
-</div>
-</section>
 
-<!-- EDUCATION -->
-<section id="education">
-<h2>Education</h2>
-<div class="services-wrapper">
-<div class="service-box">
-<p><b>Up Board 10th:</b> 67%</p>
-<small>DJ Convent Public School, 2022</small>
+<!-- STATS -->
+<div class="stats-wrapper">
+<div class="stat-box">
+<h3 class="counter" data-target="1">0+</h3>
+<p>Year Experience</p>
 </div>
-<div class="service-box">
-<p><b>Up Board 12th:</b> 58%</p>
-<small>AH Inter College, Jagdishpur, 2024</small>
+<div class="stat-box">
+<h3 class="counter" data-target="5">0+</h3>
+<p>Projects Complete</p>
 </div>
-<div class="service-box">
-<p><b>Diploma (ADCA):</b> 87%</p>
-<small>Sanjay Gandhi Computer Saksharta Mission, Jagdishpur</small>
+<div class="stat-box">
+<h3 class="counter" data-target="5">0+</h3>
+<p>Happy Clients</p>
+</div>
+<div class="stat-box">
+<h3 class="counter" data-target="95">0%</h3>
+<p>Client Satisfaction</p>
+</div>
 </div>
 </div>
 </section>
@@ -324,6 +543,98 @@ I enjoy turning ideas into real projects and creating smooth, user-friendly digi
 </div>
 </section>
 
+<!-- PRICING -->
+<!-- PRICING -->
+<section id="pricing">
+<h2>Pricing</h2>
+
+<div class="pricing-wrapper">
+
+  <!-- BASIC -->
+  <div class="pricing-card">
+    <h3>Basic Website</h3>
+    <p>₹5,000</p>
+    <small>Perfect for beginners & personal use</small>
+    <br><br>
+    <small>✔ 1 Single Page Website</small><br>
+    <small>✔ Modern UI Design</small><br>
+    <small>✔ Mobile Responsive</small><br>
+    <small>✔ Contact Section</small><br>
+    <small>✔ Free Hosting (Netlify/Vercel)</small><br>
+    <small>✔ Delivery: 2–3 Days</small><br>
+    <small>✔ 2 Free Revisions</small><br><br>
+    <button class="btn book-call">Book Call</button>
+  </div>
+
+  <!-- STANDARD -->
+  <div class="pricing-card">
+    <h3>Standard Website</h3>
+    <p>₹10,000</p>
+    <small>Best for small business & startups</small>
+    <br><br>
+    <small>✔ 3–4 Pages (Home, About, Services, Contact)</small><br>
+    <small>✔ Modern UI + Animations</small><br>
+    <small>✔ Fully Responsive</small><br>
+    <small>✔ Contact Form Integration</small><br>
+    <small>✔ SEO Friendly Structure</small><br>
+    <small>✔ Free Hosting + Domain Setup</small><br>
+    <small>✔ Delivery: 4–5 Days</small><br>
+    <small>✔ 3 Free Revisions</small><br><br>
+    <button class="btn book-call">Book Call</button>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="pricing-card">
+    <h3>Premium Website</h3>
+    <p>₹18,000 – ₹25,000</p> 
+    <small>Professional & high-end solution</small>
+    <br><br>
+    <small>✔ 5+ Pages Website</small><br>
+    <small>✔ Custom UI/UX Design</small><br>
+    <small>✔ Advanced Animations</small><br>
+    <small>✔ Contact Form + Backend</small><br>
+    <small>✔ Login / Signup (Optional)</small><br>
+    <small>✔ SEO + Performance Optimized</small><br>
+    <small>✔ Hosting + SSL Setup</small><br>
+    <small>✔ Delivery: 7–8 Days</small><br>
+    <small>✔ 5 Free Revisions</small><br><br>
+    <button class="btn book-call">Book Call</button>
+  </div>
+
+</div>
+</section>
+
+
+<!-- BOOK CALL MODAL -->
+<div class="modal" id="callModal">
+<div class="modal-content">
+<h3>Contact Me</h3>
+<a href="https://www.instagram.com/mr_shadab_6189" target="_blank">Instagram DM</a>
+<a href="https://wa.me/917084831525" target="_blank">WhatsApp</a>
+<a href="https://www.facebook.com/share/1KDvjMV8GL/" target="_blank">Facebook DM</a>
+<button class="btn" id="closeModal" style="margin-top:15px;">Close</button>
+</div>
+</div>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2>Education</h2>
+<div class="services-wrapper">
+<div class="service-box">
+<p><b>Up Board 10th:</b> 67%</p>
+<small>DJ Convent Public School, 2022</small>
+</div>
+<div class="service-box">
+<p><b>Up Board 12th:</b> 58%</p>
+<small>AH Inter College, Jagdishpur, 2024</small>
+</div>
+<div class="service-box">
+<p><b>Diploma (ADCA):</b> 87%</p>
+<small>Sanjay Gandhi Computer Saksharta Mission, Jagdishpur</small>
+</div>
+</div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
 <h2>Skills</h2>
@@ -334,90 +645,172 @@ I enjoy turning ideas into real projects and creating smooth, user-friendly digi
 </div>
 <div class="skill-box">
 <h3>Technical</h3>
-<span>Web Dev</span><span>Python Dev</span><span>Power BI</span><span>App dev</span><span>Data Analytics</span>
+<span>Web Dev</span><span>Python Dev</span><span>Power BI</span><span>App dev</span><span>Data science</span>
 </div>
 </div>
+</section>
+<!--project-->
+<section id="projects">
+  <!-- PROJECTS -->
+   <!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="services-wrapper">
+
+    <div class="service-box">
+      <i class="fa-solid fa-gamepad"></i>
+      <p><b>Snake Game</b></p>
+      <small>A classic Snake Game using python with smooth animations and responsive controls.</small>
+    </div>
+
+    <div class="service-box">
+      <i class="fa-solid fa-cube"></i>
+      <p><b>3D Portfolio Website</b></p>
+      <small>My own 3D interactive portfolio built with Html,css,js, showcasing modern web development skills and 3D animations.</small>
+    </div>
+
+    <div class="service-box">
+      <i class="fa-solid fa-cloud-sun"></i>
+      <p><b>Weather App</b></p>
+      <small>A dynamic weather app fetching live data using OpenWeatherMap API with modern UI.</small>
+    </div>
+
+    <div class="service-box">
+      <i class="fa-solid fa-money-bill-wave"></i>
+      <p><b>Bank Management System</b></p>
+      <small>A Python console application managing accounts, deposits, withdrawals, and balance tracking.</small>
+    </div>
+
+  </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<h2>Projects</h2>
-<div class="services-wrapper">
-<div class="service-box">
-<i class="fa-solid fa-laptop-code"></i>
-<p>3D Portfolio</p>
-<small>Interactive 3D portfolio website with modern design.</small>
-</div>
-<div class="service-box">
-<i class="fa-solid fa-gamepad"></i>
-<p>Snake Game</p>
-<small>Classic snake game built with JavaScript for fun.</small>
-</div>
-<div class="service-box">
-<i class="fa-solid fa-cloud-sun"></i>
-<p>Weather App</p>
-<small>Real-time weather info using API integration.</small>
-</div>
-<div class="service-box">
-<i class="fa-solid fa-bank"></i>
-<p>Mini Bank System</p>
-<small>Simple banking app simulation with Python logic.</small>
-</div>
-</div>
 </section>
+
+
 
 <!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-<div class="services-wrapper">
-<div class="service-box">
-<i class="fa-solid fa-envelope"></i>
-<p>Email</p>
-<small>shadabmohd46660@gmail.com</small>
-</div>
-<div class="service-box">
-<i class="fa-solid fa-phone"></i>
-<p>Phone</p>
-<small>+91-7084831525</small>
-</div>
-<div class="service-box">
-<i class="fa-solid fa-location-dot"></i>
-<p>Location</p>
-<small>Jagdishpur, Amethi, UP India</small>
-</div>
-</div>
-</section>
+<!-- CONTACT -->
 
-<footer>© Mohd Shadab | Portfolio</footer>
+
+    <!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-wrapper">
+
+    <!-- ONLY CONTACT FORM -->
+    <div class="contact-box contact-form-box">
+      <h3>Send Message</h3>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <select name="service" required>
+          <option value="">Select Service</option>
+          <option value="multi-page website">Multi Page Website</option>
+          <option value="full-stack website">Full Stack Website</option>
+          <option value="portfolio website">Portfolio Website</option>
+          <option value="e-commerce website">E-Commerce Website</option>
+          <option value="website redesign">Website Redesign</option>
+          <option value="bug fix">Bug Fix</option>
+          <option value="custom requirement">Custom Requirement</option>
+        </select>
+
+        <input type="number" name="budget" placeholder="Estimated Budget (₹)" required>
+
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button class="btn" type="submit">Submit</button>
+        <div style="margin-top:20px;color:#fff;font-size:16px;">
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
 <script>
-document.addEventListener("touchstart",function(){},true);
-
+// 3D Torus Animation
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
 const renderer=new THREE.WebGLRenderer({canvas:bg,alpha:true});
 renderer.setSize(innerWidth,innerHeight);
 camera.position.z=30;
-
-const torus=new THREE.Mesh(
-new THREE.TorusGeometry(10,3,16,100),
-new THREE.MeshStandardMaterial({color:0x00ffd5,wireframe:true})
-);
+const torus=new THREE.Mesh(new THREE.TorusGeometry(10,3,16,100), new THREE.MeshStandardMaterial({color:0x00ffd5,wireframe:true}));
 scene.add(torus);
-
 const light=new THREE.PointLight(0xffffff);
 light.position.set(20,20,20);
 scene.add(light);
-
-function animate(){
-requestAnimationFrame(animate);
-torus.rotation.x+=0.005;
-torus.rotation.y+=0.008;
-renderer.render(scene,camera);
-}
+function animate(){requestAnimationFrame(animate);torus.rotation.x+=0.005;torus.rotation.y+=0.008;renderer.render(scene,camera);}
 animate();
+
+// Counter Animation
+const counters = document.querySelectorAll('.counter');
+let countersStarted = false;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting && !countersStarted){
+      countersStarted = true;
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = target / 100;
+        const updateCount = () => {
+          count += increment;
+          if(count < target){
+            counter.innerText = Math.ceil(count) + (counter.getAttribute('data-target')=="95"?"%":"+");
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.innerText = target + (counter.getAttribute('data-target')=="95"?"%":"+");
+          }
+        };
+        updateCount();
+      });
+    }
+  });
+},{threshold:0.5});
+observer.observe(document.querySelector('#about'));
+
+// Book Call Modal
+const modal = document.getElementById('callModal');
+document.querySelectorAll('.book-call').forEach(btn => {
+  btn.addEventListener('click',()=>{modal.style.display='flex';});
+});
+document.getElementById('closeModal').addEventListener('click',()=>{modal.style.display='none';});
+window.addEventListener('click',e=>{if(e.target==modal){modal.style.display='none';}});
+// Contact Form Submission
+// CONTACT FORM SUBMISSION
+const form = document.getElementById('contactForm');
+
+function getFormMessage(){
+  const name = form.name.value;
+  const email = form.email.value;
+  const service = form.service.value;
+  const budget = form.budget.value;
+  const message = form.message.value;
+
+  return `Hello Shadab 👋
+Name: ${name}
+Email: ${email}
+Service: ${service}
+Budget: ₹${budget}
+Message: ${message}`;
+}
+
+/* WHATSAPP */
+document.querySelector('.whatsapp-btn').addEventListener('click',()=>{
+  const text = encodeURIComponent(getFormMessage());
+  window.open(`https://wa.me/917084831525?text=${text}`,'_blank');
+});
+
+/* INSTAGRAM */
+document.querySelector('.insta-btn').addEventListener('click',()=>{
+  // Instagram DM direct API allow nahi karta
+  window.open('https://www.instagram.com/mr_shadab_6189','_blank');
+});
+
+/* TELEGRAM */
+document.querySelector('.telegram-btn').addEventListener('click',()=>{
+  const text = encodeURIComponent(getFormMessage());
+  window.open(`https://t.me/share/url?text=${text}`,'_blank');
+});
+
+
+
 </script>
 
 </body>
-</html>
+</html> 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+ 
+/* ===== DAY MODE SIMPLE & CLEAN ===== */
+body.light-mode{
+  background:#ffffff;
+  color:#000000;
+}
+
+/* force all text black in day mode */
+body.light-mode *{
+  color:#000000 !important;
+}
+
+/* icons black */
+body.light-mode i{
+  color:#000000 !important;
+}
+
+/* links hover fix */
+body.light-mode a:hover{
+  color:#000000;
+}
+
+
+
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif; -webkit-tap-highlight-color: transparent;}
 html{scroll-behavior:smooth;}
 body{background:#0b0b0b;color:#fff;overflow-x:hidden;}
@@ -436,6 +462,59 @@ h2{font-size:32px;text-align:center;}
 .stats-wrapper{flex-direction:column;align-items:center;}
 .stat-box{width:100%;max-width:220px;}
 }
+/* ===== EXTRA MOBILE RESPONSIVE FIX ===== */
+@media (max-width:768px){
+
+  header{
+    height:auto;
+    padding-top:120px;
+  }
+
+  .hero{
+    flex-direction:column;
+    gap:30px;
+    padding:0 20px;
+    text-align:center;
+  }
+
+  .hero-text h1{
+    font-size:36px;
+  }
+
+  .hero-text p{
+    font-size:15px;
+  }
+
+  .hero-image{
+    position:relative;
+    right:auto;
+    top:auto;
+    transform:none;
+    width:220px;
+    height:220px;
+    margin:auto;
+  }
+
+  .services-wrapper,
+  .pricing-wrapper,
+  .skills-wrapper,
+  .stats-wrapper,
+  .contact-wrapper{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .card,
+  .service-box,
+  .pricing-card,
+  .skill-box,
+  .stat-box,
+  .contact-box{
+    width:100%;
+    max-width:340px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -454,7 +533,10 @@ h2{font-size:32px;text-align:center;}
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
-  <span class="settings-icon"><i class="fa-solid fa-gear"></i></span>
+  <span class="settings-icon" id="themeToggle">
+  <i class="fa-solid fa-moon"></i>
+</span>
+
 </div>
 <div style="clear:both;"></div>
 </nav>
@@ -773,44 +855,61 @@ document.getElementById('closeModal').addEventListener('click',()=>{modal.style.
 window.addEventListener('click',e=>{if(e.target==modal){modal.style.display='none';}});
 // Contact Form Submission
 // CONTACT FORM SUBMISSION
+
+
 const form = document.getElementById('contactForm');
 
-function getFormMessage(){
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
   const name = form.name.value;
   const email = form.email.value;
   const service = form.service.value;
   const budget = form.budget.value;
   const message = form.message.value;
 
-  return `Hello Shadab 👋
+  const whatsappMessage = `
+Hello Shadab 👋
+
 Name: ${name}
 Email: ${email}
 Service: ${service}
 Budget: ₹${budget}
-Message: ${message}`;
+
+Message:
+${message}
+  `;
+
+  const phoneNumber = "917084831525";
+  window.open(
+    `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`,
+    "_blank"
+  );
+});
+
+const toggleBtn = document.getElementById("themeToggle");
+const icon = toggleBtn.querySelector("i");
+
+// page load par icon + theme
+if(localStorage.getItem("theme") === "light"){
+  document.body.classList.add("light-mode");
+  icon.classList.remove("fa-moon");
+  icon.classList.add("fa-sun");
 }
 
-/* WHATSAPP */
-document.querySelector('.whatsapp-btn').addEventListener('click',()=>{
-  const text = encodeURIComponent(getFormMessage());
-  window.open(`https://wa.me/917084831525?text=${text}`,'_blank');
+// click toggle
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+
+  if(document.body.classList.contains("light-mode")){
+    localStorage.setItem("theme","light");
+    icon.classList.replace("fa-moon","fa-sun");
+  }else{
+    localStorage.setItem("theme","dark");
+    icon.classList.replace("fa-sun","fa-moon");
+  }
 });
-
-/* INSTAGRAM */
-document.querySelector('.insta-btn').addEventListener('click',()=>{
-  // Instagram DM direct API allow nahi karta
-  window.open('https://www.instagram.com/mr_shadab_6189','_blank');
-});
-
-/* TELEGRAM */
-document.querySelector('.telegram-btn').addEventListener('click',()=>{
-  const text = encodeURIComponent(getFormMessage());
-  window.open(`https://t.me/share/url?text=${text}`,'_blank');
-});
-
-
-
 </script>
 
 </body>
-</html> 
+</html>  or is website ko phone responsive krdo 
